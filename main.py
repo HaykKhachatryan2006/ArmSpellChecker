@@ -15,7 +15,7 @@ with header:
 # print(res[0])
 
 with tinput:
-    inpt = st.text_input("Enter your text...", )
+    inpt = st.text_input(label="Enter your text...")
     # inputs = tokenizer([inpt], padding="longest", return_tensors="pt").input_ids.cuda()
     # res = model.generate(inputs)
     # st.write(tokenizer.decode(res[0]))
