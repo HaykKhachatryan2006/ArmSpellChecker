@@ -1,8 +1,5 @@
-!pip install transformers
-
 import streamlit as st
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
-
+from transformers import T5ForConditionalGeneration, AutoTokenizer
 
 header = st.container()
 tinput = st.container()
@@ -11,26 +8,14 @@ with header:
     st.title("Welcome to ArmSpellCheck")
     st.text("Here you can check your mistakes...")
 
+model = T5ForConditionalGeneration.from_pretrained('C:/Users/Lenovo/Desktop/ArmSpellcheck/final-model_3.0',)
+tokenizer = AutoTokenizer.from_pretrained('C:/Users/Lenovo/Desktop/ArmSpellcheck/final-model_3.0')
+# inputs = tokenizer(['այծակ'], padding="longest", return_tensors="pt").input_ids.cuda()
+# res = model.generate(inputs)
 
-@st.cache
-def model_loader():
-    model = AutoModelForSeq2SeqLM.from_pretrained("Artyom/ArmSpellcheck_beta")
-    return model
-
-
-def tokenizer_loader():
-    tokenizer = AutoTokenizer.from_pretrained("Artyom/ArmSpellcheck_beta")
-    return tokenizer
-
-
-def output(model, tokenizer):
+with tinput:
     inpt = st.text_input(label="", value="Ձեր տեքստը")
     inputs = tokenizer([inpt], padding="longest", return_tensors="pt").input_ids
     res = model.generate(inputs)
-    return res[0]
-
-
-m = model_loader()
-t = tokenizer_loader()
-
-st.write(t.decode(output(m, t)))
+    st.write(tokenizer.decode(res[0]))
+    # st.write(inpt)
