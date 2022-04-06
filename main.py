@@ -1,3 +1,5 @@
+!pip install transformers
+
 import streamlit as st
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
