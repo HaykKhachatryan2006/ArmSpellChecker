@@ -1,5 +1,6 @@
 import streamlit as st
-from transformers import T5ForConditionalGeneration, AutoTokenizer
+from transformers import T5ForConditionalGeneration, AutoTokenizer, AutoModel, AutoModelForSeq2SeqLM
+
 
 header = st.container()
 tinput = st.container()
@@ -11,12 +12,13 @@ with header:
 
 @st.cache
 def model_loader():
-    model = T5ForConditionalGeneration.from_pretrained('./final-model_3.0', )
+    model = AutoModelForSeq2SeqLM.from_pretrained("Artyom/ArmSpellcheck_beta")
+    # model = AutoModel.from_pretrained("your_username/my-awesome-model")
     return model
 
 
 def tokenizer_loader():
-    tokenizer = AutoTokenizer.from_pretrained('./final-model_3.0')
+    tokenizer = AutoTokenizer.from_pretrained("Artyom/ArmSpellcheck_beta")
     return tokenizer
 
 
