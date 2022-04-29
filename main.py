@@ -26,7 +26,7 @@ def output(model, tokenizer):
     inpt = st.text_input(label="", value="Ձեր տեքստը")
     inputs = tokenizer([inpt], padding="longest", return_tensors="pt").input_ids
     res = model.generate(inputs)
-    return res[0]
+    return res
 
 
 m = model_loader()
