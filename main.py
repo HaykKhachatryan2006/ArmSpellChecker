@@ -32,4 +32,4 @@ def output(model, tokenizer):
 m = model_loader()
 t = tokenizer_loader()
 with tinput:
-    st.write(t.decode(output(m, t)))
+    st.write(type(t.decode(output(m, t))))
