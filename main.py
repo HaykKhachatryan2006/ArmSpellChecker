@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 st.set_page_config(page_title='Armspellcheck')
 
 header = st.container()
-tinput = st.container()
+toutput = st.container()
 
 with header:
     st.title("Welcome to ArmSpellCheck")
@@ -32,5 +32,5 @@ def output(model, tokenizer):
 
 m = model_loader()
 t = tokenizer_loader()
-with tinput:
+with toutput:
     st.write(t.decode(output(m, t)))
