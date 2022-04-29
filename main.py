@@ -26,10 +26,11 @@ def output(model, tokenizer):
     inpt = st.text_input(label="", value="Ձեր տեքստը")
     inputs = tokenizer([inpt], padding="longest", return_tensors="pt").input_ids
     res = model.generate(inputs)
-    return res
+    print(res)
+    return res[0]
 
 
 m = model_loader()
 t = tokenizer_loader()
 with tinput:
-    st.write(type(t.decode(output(m, t))))
+    st.write(t.decode(output(m, t)))
