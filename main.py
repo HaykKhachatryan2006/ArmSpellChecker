@@ -1,6 +1,8 @@
 import streamlit as st
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
+st.set_page_config(page_title='Armspellcheck')
+
 header = st.container()
 tinput = st.container()
 
