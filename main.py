@@ -68,5 +68,4 @@ inputt = st.text_input(label="", value="Ձեր տեքստը")
 text = inputt.split(" ")
 with toutput:
     for i in text:
-#         st.write(t.decode(output(i, m, t)))
-        st.write(i)
+        st.write(t.decode(output(i, m, t)))
