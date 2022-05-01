@@ -62,12 +62,12 @@ def output(textt, model, tokenizer):
     return res[0]
 
 
-m = model_loader()
-t = tokenizer_loader()
-inputt = st.text_input(label="", value="Ձեր տեքստը")
-text = inputt.split(" ")
-sum = " "
 with toutput:
+    m = model_loader()
+    t = tokenizer_loader()
+    inputt = st.text_input(label="", value="Ձեր տեքստը")
+    text = inputt.split(" ")
+    sum = " "
     for i in text:
         sum = sum + t.decode(output(i, m, t))[5:-4] + " "
     st.write(sum)
