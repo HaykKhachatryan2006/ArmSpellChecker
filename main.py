@@ -66,6 +66,8 @@ m = model_loader()
 t = tokenizer_loader()
 inputt = st.text_input(label="", value="Ձեր տեքստը")
 text = inputt.split(" ")
+sum = "'
 with toutput:
     for i in text:
-        st.write(t.decode(output(i, m, t))[5:-4])
+        sum = sum + t.decode(output(i, m, t))[5:-4] + " "
+    st.write(sum)
