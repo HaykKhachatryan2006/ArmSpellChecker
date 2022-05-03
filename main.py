@@ -34,7 +34,7 @@ def output(model, tokenizer):
 m = model_loader()
 t = tokenizer_loader()
 with toutput:
-    st.write(t.decode(output(m, t))[5:-4])
+    st.write(t.decode(output(m, t)))
 # import streamlit as st
 # from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
