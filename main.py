@@ -25,8 +25,8 @@ def tokenizer_loader():
 def output(model, tokenizer):
     x = 256
     inpt = st.text_input(label="", value="Ձեր տեքստը")
-    inputs = tokenizer([inpt], padding="longest", return_tensors="pt", max_length=x).input_ids
-    res = model.generate(inputs, max_length=x)
+    inputs = tokenizer([inpt], padding="longest", return_tensors="pt").input_ids
+    res = model.generate(inputs)
     print(res)
     return res[0]
 
