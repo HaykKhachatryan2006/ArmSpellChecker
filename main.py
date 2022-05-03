@@ -11,7 +11,7 @@ with header:
     st.text("Here you can check your mistakes...")
 
 
-@st.cache
+
 def model_loader():
     model = AutoModelForSeq2SeqLM.from_pretrained("Artyom/ArmSpellcheck_beta")
     return model
