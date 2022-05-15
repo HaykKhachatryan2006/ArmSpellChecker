@@ -24,13 +24,12 @@ def tokenizer_loader():
 
 def output(model, tokenizer):
     x = 256
-    inpt = st.text_input(label="", value="Ձեր տեքստը")
     inputs = tokenizer([inpt], padding="longest", return_tensors="pt", max_length=x).input_ids
     res = model.generate(inputs, max_length=x)
     print(res)
     return res[0]
 
-
+inpt = st.text_input(label="", value="Ձեր տեքստը")
 m = model_loader()
 t = tokenizer_loader()
 with toutput:
