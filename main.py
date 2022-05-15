@@ -26,9 +26,18 @@ def output(model, tokenizer):
 m = model_loader()
 t = tokenizer_loader()
 
-nav = st.sidebar.radio("Navigation", ["Home", "About Us"])
+nav = option_menu(
+    menu_title = None,
+    options = ["Home", "Project", "Contacts"],
+    icons = ["house", "book", "envelope"],
+    default_index = 0,
+    orientation = "horizontal"
+)
+
 
 if nav == "Home":
+    pass
+elif nav == "Project":
     st.balloons()
     header = st.container()
     toutput = st.container()
@@ -40,8 +49,8 @@ if nav == "Home":
     with toutput:
         inpt = st.text_input(label="", value="Ձեր տեքստը")
         st.write(t.decode(output(m, t))[5:-4])
-elif nav == "About Us":
+elif nav == "Contacts":
     header = st.container()
     with header:
-        st.title("About Us")
+        st.title("Our contacts")
     st.info("Our phones: +374 - (55) - 12 - 30 - 72")
