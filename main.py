@@ -3,13 +3,6 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 st.set_page_config(page_title='Armspellcheck')
 
-header = st.container()
-toutput = st.container()
-
-with header:
-    st.title("Welcome to ArmSpellCheck")
-    st.text("Here you can check your mistakes...")
-
 
 @st.cache(allow_output_mutation=True)
 def model_loader():
@@ -32,6 +25,23 @@ def output(model, tokenizer):
 
 m = model_loader()
 t = tokenizer_loader()
-with toutput:
-    inpt = st.text_input(label="", value="Ձեր տեքստը")
-    st.write(t.decode(output(m, t))[5:-4])
+
+nav = st.sidebar.radio("Navigation", ["Home", "About Us"])
+
+if nav == "Home":
+    st.balloons()
+    header = st.container()
+    toutput = st.container()
+
+    with header:
+        st.title("Welcome to ArmSpellCheck")
+        st.text("Here you can check your mistakes...")
+
+    with toutput:
+        inpt = st.text_input(label="", value="Ձեր տեքստը")
+        st.write(t.decode(output(m, t))[5:-4])
+elif nav == "About Us":
+    header = st.container()
+    with header:
+        st.title("About Us")
+    st.info("Our phones: +374 - (55) - 12 - 30 - 72")
