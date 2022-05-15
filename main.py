@@ -30,7 +30,7 @@ t = tokenizer_loader()
 nav = option_menu(
     menu_title = None,
     options = ["Home", "Project", "Contacts"],
-    icons = ["house", "book", "envelope"],
+    icons = ["house", "calculator-fill", "envelope"],
     default_index = 0,
     orientation = "horizontal"
 )
