@@ -29,10 +29,11 @@ def output(model, tokenizer):
     print(res)
     return res[0]
 
-inpt = st.text_input(label="", value="Ձեր տեքստը")
+
 m = model_loader()
 t = tokenizer_loader()
 with toutput:
+    inpt = st.text_input(label="", value="Ձեր տեքստը")
     st.write(t.decode(output(m, t))[5:-4])
 # import streamlit as st
 # from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
