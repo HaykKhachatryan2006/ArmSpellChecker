@@ -45,7 +45,7 @@ elif nav == "Project":
     ml = model_loader()
     m = ml
     t = tokenizer_loader()
-    st.balloons()
+#     st.balloons()
 
     with header:
         st.title("Here you can check your mistakes...")
@@ -54,7 +54,7 @@ elif nav == "Project":
         inpt = st.text_input(label="", value="Ձեր տեքստը")
         st.write(t.decode(output(m, t))[5:-4])
 elif nav == "Contacts":
-    st.snow()
+#     st.snow()
     cheader = st.container()
     with cheader:
         st.title("Our contacts")
