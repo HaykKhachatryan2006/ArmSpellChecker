@@ -57,4 +57,4 @@ elif nav == "Contacts":
     header = st.container()
     with header:
         st.title("Our contacts")
-    st.info("Our phones: +374 (55) 12 - 30 - 72")
+    st.info("Artyom: +374 (55) 12 - 30 - 72")
