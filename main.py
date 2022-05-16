@@ -23,9 +23,6 @@ def output(model, tokenizer):
     print(res)
     return res[0]
 
-with st.spinner("Loading model"):
-    m = model_loader()
-    t = tokenizer_loader()
 
 nav = option_menu(
     menu_title = None,
@@ -44,7 +41,9 @@ if nav == "Home":
 elif nav == "Project":
     header = st.container()
     toutput = st.container()
-    
+    with st.spinner("Loading model"):
+        m = model_loader()
+        t = tokenizer_loader()
     st.balloons()
 
     with header:
