@@ -54,7 +54,7 @@ elif nav == "Project":
         inpt = st.text_input(label="", value="Ձեր տեքստը")
         st.write(t.decode(output(m, t))[5:-4])
 elif nav == "Contacts":
-   st.snow()
+    st.snow()
     header = st.container()
     with header:
         st.title("Our contacts")
