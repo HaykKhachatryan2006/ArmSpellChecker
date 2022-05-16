@@ -57,4 +57,4 @@ elif nav == "Contacts":
     header = st.container()
     with header:
         st.title("Our contacts")
-    st.info("Artyom:\nHayk:\nHakob:")
+    st.info("Artyom:" + "\n" + "Hayk:" + "\n"+ "Hakob:")
