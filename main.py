@@ -23,9 +23,9 @@ def output(model, tokenizer):
     print(res)
     return res[0]
 
-
-m = model_loader()
-t = tokenizer_loader()
+with st.spinner("Loading model"):
+    m = model_loader()
+    t = tokenizer_loader()
 
 nav = option_menu(
     menu_title = None,
@@ -54,6 +54,7 @@ elif nav == "Project":
         inpt = st.text_input(label="", value="Ձեր տեքստը")
         st.write(t.decode(output(m, t))[5:-4])
 elif nav == "Contacts":
+   st.snow()
     header = st.container()
     with header:
         st.title("Our contacts")
