@@ -37,15 +37,18 @@ nav = option_menu(
 
 
 if nav == "Home":
-    pass
+    header = st.container()
+    with header:
+        st.title("About or program")
+        st.text("Welcome user. We created a program for checking your mistakes. You can try out it in project.")
 elif nav == "Project":
-    st.balloons()
     header = st.container()
     toutput = st.container()
+    
+    st.balloons()
 
     with header:
-        st.title("Welcome to ArmSpellCheck")
-        st.text("Here you can check your mistakes...")
+        st.title("Here you can check your mistakes...")
 
     with toutput:
         inpt = st.text_input(label="", value="Ձեր տեքստը")
