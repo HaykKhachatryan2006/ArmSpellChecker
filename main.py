@@ -1,11 +1,13 @@
 import streamlit as st
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from streamlit_option_menu import option_menu
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-st.set_page_config(page_title='Armspellcheck')
+st.set_page_config(
+    page_title="Armspellcheck",
+)
 
 
-@st.cache(allow_output_mutation=True)
+@st.cache
 def model_loader():
     model = AutoModelForSeq2SeqLM.from_pretrained("Artyom/ArmSpellcheck_beta")
     return model
@@ -25,25 +27,24 @@ def output(model, tokenizer):
 
 
 nav = option_menu(
-    menu_title = None,
-    options = ["Home", "Project", "Contacts"],
-    icons = ["house", "calculator-fill", "envelope"],
-    default_index = 0,
-    orientation = "horizontal"
+    menu_title=None,
+    options=["Home", "Project", "Contacts"],
+    icons=["house", "calculator-fill", "envelope"],
+    default_index=0,
+    orientation="horizontal"
 )
-
 
 if nav == "Home":
     header = st.container()
     with header:
         st.title("About or program")
-        st.text("Welcome user. We created a program for checking your mistakes. You can try out it in project.")
+        st.markdown("Welcome user. We created a program for checking your mistakes. You can try out it in project.")
 elif nav == "Project":
     header = st.container()
     toutput = st.container()
-    with st.spinner("Loading model"):
-        m = model_loader()
-        t = tokenizer_loader()
+    ml = model_loader()
+    m = ml
+    t = tokenizer_loader()
     st.balloons()
 
     with header:
@@ -54,7 +55,15 @@ elif nav == "Project":
         st.write(t.decode(output(m, t))[5:-4])
 elif nav == "Contacts":
     st.snow()
-    header = st.container()
-    with header:
+    cheader = st.container()
+    with cheader:
         st.title("Our contacts")
-    st.info("Artyom:" + "\n" + "Hayk:" + "\n"+ "Hakob:")
+        st.info(
+            "Hayk:"
+        )
+        st.info(
+            "Artyom:"
+        )
+        st.info(
+            "Hakob:"
+        )
