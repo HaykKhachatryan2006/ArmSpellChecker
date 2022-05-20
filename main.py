@@ -37,7 +37,7 @@ nav = option_menu(
 if nav == "Home":
     header = st.container()
     with header:
-        st.title("About or program")
+        st.title("About our program")
         st.markdown("Welcome user. We created a program for checking your mistakes. You can try out it in project.")
 elif nav == "Project":
     header = st.container()
