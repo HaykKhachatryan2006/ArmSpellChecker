@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 
-@st.cache
+@st.experimental_singleton
 def model_loader():
     model = AutoModelForSeq2SeqLM.from_pretrained("Artyom/ArmSpellcheck_beta")
     return model
@@ -37,7 +37,7 @@ nav = option_menu(
 if nav == "Home":
     header = st.container()
     with header:
-        st.title("About or program")
+        st.title("About our program")
         st.markdown("Welcome user. We created a program for checking your mistakes. You can try out it in project.")
 elif nav == "Project":
     header = st.container()
@@ -45,7 +45,7 @@ elif nav == "Project":
     ml = model_loader()
     m = ml
     t = tokenizer_loader()
-    st.balloons()
+#     st.balloons()
 
     with header:
         st.title("Here you can check your mistakes...")
@@ -54,7 +54,7 @@ elif nav == "Project":
         inpt = st.text_input(label="", value="Ձեր տեքստը")
         st.write(t.decode(output(m, t))[5:-4])
 elif nav == "Contacts":
-    st.snow()
+#     st.snow()
     cheader = st.container()
     with cheader:
         st.title("Our contacts")
