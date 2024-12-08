@@ -7,7 +7,7 @@ st.set_page_config(
 )
 
 
-@st.experimental_singleton
+@st.cache_resource
 def model_loader():
     model = AutoModelForSeq2SeqLM.from_pretrained("Artyom/ArmSpellcheck_beta")
     return model
