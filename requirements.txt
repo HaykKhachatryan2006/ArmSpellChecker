@@ -1,6 +1,6 @@
 streamlit_option_menu
 torch
-transformers~=4.17.0
+transformers
 streamlit_option_menu
 
-streamlit~=1.8.1
+streamlit
