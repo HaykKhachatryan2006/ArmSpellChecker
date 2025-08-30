@@ -3,7 +3,7 @@ from streamlit_option_menu import option_menu
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 from huggingface_hub import login
-login(token=HF_TOKEN)
+login(token=st.secrets["HF_TOKEN"])
 
 st.set_page_config(
     page_title="Armspellcheck",
