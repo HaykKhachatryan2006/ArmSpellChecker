@@ -12,12 +12,12 @@ st.set_page_config(
 
 @st.cache_resource
 def model_loader():
-    model = AutoModelForSeq2SeqLM.from_pretrained("Artyom/ArmSpellcheck_beta")
+    model = AutoModelForSeq2SeqLM.from_pretrained("HaykKhachatryan/ArmSpellChecker")
     return model
 
 
 def tokenizer_loader():
-    tokenizer = AutoTokenizer.from_pretrained("Artyom/ArmSpellcheck_beta")
+    tokenizer = AutoTokenizer.from_pretrained("HaykKhachatryan/ArmSpellChecker")
     return tokenizer
 
 
